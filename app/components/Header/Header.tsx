@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 const Header = () => {
   return (
-    <div className="flex items-center">
-      <img
+    <div className="flex items-center mb-10">
+      <Image
         className="h-min"
+        alt="Logo"
         src="berliner_polizei.svg"
         height={80}
         width={80}
