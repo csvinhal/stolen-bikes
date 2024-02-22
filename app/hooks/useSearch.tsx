@@ -1,39 +1,35 @@
-import useSWR, { Fetcher } from "swr";
 import axios from "axios";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import useSWR, { Fetcher } from "swr";
+import { Bike } from "../types/search";
 
-interface Bike {
-  id: number;
-  title: string;
-  serial: string;
-  dateStolen: number;
-  stolenLocation: string;
-  thumb?: string;
-  description: string;
-  primaryColors?: string;
-}
+dayjs.extend(localizedFormat);
 
 interface FetchResponse {
   bikes: Array<Bike>;
 }
 
 const fetchIncidents: Fetcher<FetchResponse, string> = (url: string) =>
-  axios
-    .get<FetchResponse>(`https://bikeindex.org/api/v3/${url}`)
-    .then(function (response) {
-      const { bikes } = response.data;
-      return {
-        bikes: bikes.map((bike: any) => ({
-          id: bike.id,
-          title: bike.title,
-          serial: bike.serial,
-          dateStolen: bike.date_stolen,
-          stolenLocation: bike.stolen_location,
-          thumb: bike.thumb,
-          description: bike.description,
-          primaryColors: bike.frame_colors?.join(", "),
-        })),
-      };
-    });
+  axios.get(`https://bikeindex.org/api/v3/${url}`).then((response) => {
+    const { bikes } = response.data;
+    return {
+      bikes: bikes.map((bike: any) => ({
+        id: bike.id,
+        title: bike.title,
+        serial: bike.serial,
+        dateStolen: bike.date_stolen
+          ? dayjs(bike.date_stolen).format("LLL")
+          : undefined,
+        stolenLocation: bike.stolen_location,
+        status: bike.status,
+        thumb: bike.thumb,
+        description: bike.description,
+        primaryColors: bike.frame_colors?.join(", "),
+        locationFound: bike.location_found,
+      })),
+    };
+  });
 
 interface SearchProps {
   page?: number;
