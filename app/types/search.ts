@@ -5,10 +5,10 @@ export interface Bike {
   title: string;
   serial: string;
   dateStolen?: string;
-  stolenLocation: string;
+  stolenLocation?: string;
   status: BikeStatus;
   thumb?: string;
   description: string;
   primaryColors?: string;
-  locationFound: string;
+  locationFound?: string;
 }

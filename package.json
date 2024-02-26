@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.6",
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
@@ -19,6 +20,7 @@
     "swr": "^2.2.4"
   },
   "devDependencies": {
+    "@types/google.maps": "^3.55.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

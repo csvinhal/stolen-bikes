@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { BikeStatus } from "@/app/types/search";
+import { type BikeStatus } from "@/app/types/search";
 import bikePlaceholder from "../../../public/bike_photo_placeholder.svg";
 import Attributes from "../Attributes/Attributes";
 import BikeDetailSerial from "./BikeDetailSerial/BikeDetailSerial";

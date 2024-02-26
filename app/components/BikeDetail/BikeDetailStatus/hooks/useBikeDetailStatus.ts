@@ -1,4 +1,4 @@
-import { BikeStatus } from "@/app/types/search";
+import { type BikeStatus } from "@/app/types/search";
 
 const getLabelByStatus = (status: BikeStatus) => {
   switch (status) {

@@ -1,6 +1,6 @@
-import { BikeStatus } from "@/app/types/search";
-import Attributes from "../../Attributes/Attributes";
+import { type BikeStatus } from "@/app/types/search";
 import clsx from "clsx";
+import Attributes from "../../Attributes/Attributes";
 import { useBikeDetailSerial } from "./hooks/useBikeDetailSerial";
 
 interface Props {

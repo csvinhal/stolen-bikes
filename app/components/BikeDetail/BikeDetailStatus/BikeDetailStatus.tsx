@@ -1,4 +1,4 @@
-import { BikeStatus } from "@/app/types/search";
+import { type BikeStatus } from "@/app/types/search";
 import clsx from "clsx";
 import Attributes from "../../Attributes/Attributes";
 import { useBikeDetailStatus } from "./hooks/useBikeDetailStatus";
