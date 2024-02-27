@@ -14,14 +14,9 @@ const getLabelByStatus = (status: BikeStatus) => {
 };
 
 export const useBikeDetailStatus = (status: BikeStatus) => {
-  const isFound = "found" === status;
-  const isStolenOrImpounded = ["stolen", "impounded"].includes(status);
-
   const label = getLabelByStatus(status);
 
   return {
-    isFound,
-    isStolenOrImpounded,
     label,
   };
 };

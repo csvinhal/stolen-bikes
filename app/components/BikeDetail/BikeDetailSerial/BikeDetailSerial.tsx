@@ -7,12 +7,15 @@ interface Props {
   serial: string;
   status: BikeStatus;
 }
-const BikeDetailSerial = (props: Props) => {
-  const { description, isHidden } = useBikeDetailSerial(props);
+const BikeDetailSerial = ({ serial, status }: Props) => {
+  const { description, isHidden, isUnknown } = useBikeDetailSerial({
+    serial,
+    status,
+  });
 
   return (
     <Attributes.Item
-      className={clsx({ "text-gray-300": isHidden })}
+      className={clsx({ "text-gray-300": isHidden || isUnknown })}
       label="Serial"
       description={description}
     />

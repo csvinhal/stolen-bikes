@@ -40,7 +40,7 @@ interface SearchProps {
 
 export const useSearch = ({ page = 1, query = "" }: SearchProps) => {
   const { data, error, isLoading, mutate } = useSWR(
-    `search/?page=${page}&per_page=10&query=${query}`,
+    `search/?page=${page}&per_page=10&stolenness=non&query=${query}`,
     fetchIncidents
   );
 

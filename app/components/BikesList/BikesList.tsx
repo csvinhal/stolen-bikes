@@ -13,36 +13,7 @@ const BikesList = () => {
       {!isLoading &&
         bikes &&
         bikes.length > 0 &&
-        bikes?.map(
-          ({
-            id,
-            dateStolen,
-            description,
-            title,
-            locationFound,
-            stolenLocation,
-            primaryColors,
-            serial,
-            status,
-            thumb,
-          }) => {
-            return (
-              <BikeDetail
-                key={id}
-                id={id}
-                dateStolen={dateStolen}
-                description={description}
-                title={title}
-                locationFound={locationFound}
-                stolenLocation={stolenLocation}
-                primaryColors={primaryColors}
-                serial={serial}
-                status={status}
-                thumb={thumb}
-              />
-            );
-          }
-        )}
+        bikes?.map((bike) => <BikeDetail key={bike.id} bike={bike} />)}
     </div>
   );
 };

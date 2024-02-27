@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "bikebook.s3.amazonaws.com",
+        port: "",
+        pathname: "/uploads/**",
+      },
     ],
   },
 };

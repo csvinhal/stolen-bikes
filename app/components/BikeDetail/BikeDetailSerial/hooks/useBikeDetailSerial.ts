@@ -26,9 +26,11 @@ const getDescriptionBySerialAndStatus = ({ serial, status }: Props): string => {
 
 export const useBikeDetailSerial = ({ serial, status }: Props) => {
   const isHidden = isBikeStatusHidden(status);
+  const isUnknown = serial.toLocaleLowerCase() === "unknown";
 
   return {
     isHidden,
+    isUnknown,
     description: getDescriptionBySerialAndStatus({ serial, status }),
   };
 };
