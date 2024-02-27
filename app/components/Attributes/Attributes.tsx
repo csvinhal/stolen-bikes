@@ -5,14 +5,14 @@ interface Props {
 }
 
 const Attributes = ({ children }: Props) => {
-  return <ul className="md:basis-[48%] lg:basis-[40%]">{children}</ul>;
+  return <ul className="columns-1 md:columns-2">{children}</ul>;
 };
 
 interface ItemProps {
   className?: string;
   labelColor?: string;
   label: string;
-  description: string;
+  description: string | number;
 }
 
 Attributes.Item = ({ className, labelColor, label, description }: ItemProps) => {

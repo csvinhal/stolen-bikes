@@ -58,26 +58,24 @@ const BikeDetail = ({
             {title}
           </Link>
         </h5>
-        <div className="flex flex-col md:flex-row">
-          <Attributes>
-            <BikeDetailSerial serial={serial} status={status} />
-            <Attributes.Item
-              label="Primary Colors"
-              description={primaryColors ?? ""}
-            />
-          </Attributes>
+        <Attributes>
+          <BikeDetailSerial serial={serial} status={status} />
+          <Attributes.Item
+            label="Primary Colors"
+            description={primaryColors ?? ""}
+          />
 
           {["stolen", "found", "impounded"].includes(status) && (
-            <Attributes>
+            <>
               <BikeDetailStatus status={status} dateStolen={dateStolen} />
 
               <Attributes.Item
                 label="Location"
                 description={stolenLocation ?? locationFound}
               />
-            </Attributes>
+            </>
           )}
-        </div>
+        </Attributes>
 
         {description && (
           <>

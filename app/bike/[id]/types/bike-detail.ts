@@ -12,6 +12,8 @@ export interface BikeDetail {
   locationFound?: string;
   manufacturer: string;
   model: string;
-  year: number;
+  primaryColors?: string;
+  frameSize?: string;
+  year?: number;
   img?: string;
 }

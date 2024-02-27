@@ -26,6 +26,8 @@ export const useBike = async (id: string): Promise<BikeDetail> => {
       : undefined,
     manufacturer: bike.manufacturer_name,
     model: bike.frame_model,
+    frameSize: bike.frame_size,
+    primaryColors: bike.frame_colors?.join(", "),
     year: bike.year,
     stolenCoordinates: bike.stolen_coordinates,
     img: bike.large_img,
