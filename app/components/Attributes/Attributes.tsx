@@ -10,15 +10,23 @@ const Attributes = ({ children }: Props) => {
 
 interface ItemProps {
   className?: string;
-  labelColor?: string;
+  labelClassName?: string;
+  descriptionClassName?: string;
   label: string;
   description: string | number;
 }
 
-Attributes.Item = ({ className, labelColor, label, description }: ItemProps) => {
+Attributes.Item = ({
+  className,
+  labelClassName,
+  descriptionClassName,
+  label,
+  description,
+}: ItemProps) => {
   return (
     <li className={className}>
-      <strong className={labelColor}>{label}:</strong> {description}
+      <strong className={labelClassName}>{label}:</strong>{" "}
+      <span className={descriptionClassName}>{description}</span>
     </li>
   );
 };

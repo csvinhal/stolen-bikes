@@ -33,7 +33,7 @@ const FoundBikeCard = ({ bike }: Props) => {
 
           <Attributes.Item
             label="Found"
-            labelColor="uppercase text-green-500"
+            labelClassName="uppercase text-green-500"
             description=""
           />
 

@@ -14,7 +14,7 @@ const BikeDetailStatus = ({ status, dateStolen }: Props) => {
   return (
     <Attributes.Item
       label={label}
-      labelColor={clsx("uppercase", {
+      labelClassName={clsx("uppercase", {
         "text-red-500": isStolenOrImpounded,
         "text-green-500": isFound,
       })}

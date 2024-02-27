@@ -15,8 +15,8 @@ const BikeDetailSerial = ({ serial, status }: Props) => {
 
   return (
     <Attributes.Item
-      className={clsx({ "text-gray-300": isHidden || isUnknown })}
       label="Serial"
+      descriptionClassName={clsx({ "text-gray-300": isHidden || isUnknown })}
       description={description}
     />
   );

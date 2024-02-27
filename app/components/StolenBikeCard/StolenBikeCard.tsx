@@ -38,7 +38,7 @@ const StolenBikeCard = ({ bike }: Props) => {
 
           <Attributes.Item
             label={status === "stolen" ? "Stolen" : "Impounded"}
-            labelColor="uppercase text-red-500"
+            labelClassName="uppercase text-red-500"
             description={dateStolen}
           />
 
