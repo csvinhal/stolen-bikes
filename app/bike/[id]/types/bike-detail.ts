@@ -3,6 +3,7 @@ import { type BikeStatus } from "@/app/types/search";
 export interface BikeDetail {
   id: number;
   title: string;
+  description?: string;
   serial: string;
   status: BikeStatus;
   stolenCoordinates?: number[];
@@ -16,4 +17,5 @@ export interface BikeDetail {
   frameSize?: string;
   year?: number;
   img?: string;
+  frameMaterial?: string;
 }

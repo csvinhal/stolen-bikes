@@ -5,12 +5,12 @@ interface Props {
   status: BikeStatus;
 }
 
-const isBikeStatusHidden = (serial: BikeStatus) => {
+const isBikeStatusHidden = (serial: string) => {
   return serial.toLocaleLowerCase() === "hidden";
 };
 
 const getDescriptionBySerialAndStatus = ({ serial, status }: Props): string => {
-  const isHidden = isBikeStatusHidden(status);
+  const isHidden = isBikeStatusHidden(serial);
 
   if (isHidden) {
     switch (status) {
@@ -25,7 +25,7 @@ const getDescriptionBySerialAndStatus = ({ serial, status }: Props): string => {
 };
 
 export const useBikeDetailSerial = ({ serial, status }: Props) => {
-  const isHidden = isBikeStatusHidden(status);
+  const isHidden = isBikeStatusHidden(serial);
   const isUnknown = serial.toLocaleLowerCase() === "unknown";
 
   return {

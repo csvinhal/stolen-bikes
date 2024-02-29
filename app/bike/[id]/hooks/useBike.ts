@@ -31,5 +31,7 @@ export const useBike = async (id: string): Promise<BikeDetail> => {
     year: bike.year,
     stolenCoordinates: bike.stolen_coordinates,
     img: bike.large_img,
+    description: bike.description,
+    frameMaterial: bike.frame_material_slug,
   };
 };
